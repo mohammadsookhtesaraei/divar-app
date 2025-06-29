@@ -6,12 +6,14 @@ import DashboardPage from "../pages/DashboardPage";
 import AuthPage from "../pages/AuthPage";
 import AdminPage from "../pages/AdminPage";
 import NotFoundPage from "../pages/404";
+import Loader from "../components/modules/Loader";
+
 import { getProfile } from "../services/user";
 
 const Router = () => {
   const {data,isPending,error}=useQuery({queryKey:["profile"],queryFn:getProfile});
   console.log({data,isPending,error});
-  if(isPending) return <p>loading...</p>
+  if(isPending) return <Loader/>
   return (
     <Routes>
       <Route index element={<HomePage />} />
