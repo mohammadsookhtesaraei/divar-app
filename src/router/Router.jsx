@@ -1,12 +1,16 @@
 import { Route, Routes } from "react-router";
+import { useQuery } from "@tanstack/react-query";
 
 import HomePage from "../pages/HomePage";
 import DashboardPage from "../pages/DashboardPage";
 import AuthPage from "../pages/AuthPage";
 import AdminPage from "../pages/AdminPage";
 import NotFoundPage from "../pages/404";
+import { getProfile } from "../services/user";
 
 const Router = () => {
+  const {data,isPending,error}=useQuery({queryKey:["profile"],queryFn:getProfile});
+
   return (
     <Routes>
       <Route index element={<HomePage />} />
