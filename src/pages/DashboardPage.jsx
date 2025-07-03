@@ -1,8 +1,11 @@
+import AddPost from "../components/templates/AddPost"
 
 
 const DashboardPage = () => {
   return (
-    <div>DashboardPage</div>
+    <div>
+      <AddPost/>
+    </div>
   )
 }
 
