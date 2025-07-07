@@ -1,39 +1,96 @@
-.header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 2px solid rgb(234,234,234);
-    padding: 10px 0;
-    margin-bottom: 20px;
+#header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid rgb(234, 234, 234);
+  padding: 10px 0;
+  margin-bottom: 20px;
+  position: relative;
 }
 .logo {
-width: 45px;
-margin-left: 40px;
+  width: 45px;
+  margin-left: 40px;
 }
 
-.header div {
-    display: flex;
+#header div {
+  display: flex;
 }
 
-.header span {
-    display: flex;
-    align-items: center;
-    color: gray;
-    height: 50px;
+#header span {
+  display: flex;
+  align-items: center;
+  color: gray;
+  height: 50px;
 }
 
-.header span p {
-    margin-right: 5px;
-    font-size: 0.9rem;
+#header span p {
+  margin-right: 5px;
+  font-size: 0.9rem;
 }
 .button {
- background-color: #a62626;
- color: #fff;
- height: 40px;
- width: 80px;
- line-height: 40px;
- text-align: center;
- border-radius: 5px;
- margin-right: 40px;
-
+  background-color: #a62626;
+  color: #fff;
+  height: 40px;
+  width: 80px;
+  line-height: 40px;
+  text-align: center;
+  border-radius: 5px;
+  margin-right: 40px;
 }
+
+#header .hide {
+  display: none;
+}
+
+#header .menu {
+  display: flex;
+  flex-direction: column;
+  width: 140px;
+  position: absolute;
+  top: 65px;
+  left: 57px;
+  border-radius: 5px;
+  border: 1px solid gray;
+  background-color: #f3f3f3;
+  overflow: hidden;
+}
+
+#header .menu div {
+  border-bottom: 1px solid gray;
+  padding: 15px 5px; 
+ 
+}
+
+
+#header .menu div a {
+  display: flex;
+  align-items: center;
+  font-size: 0.7rem;
+  height: 0px;
+ 
+}
+
+
+
+#header .menu div a span {
+  margin-right: 5px;
+}
+
+.logoutBtn {
+  background: none;
+  border: none;
+  color: inherit;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  padding: 0;
+  font: inherit;
+  font-size: 0.7rem;
+  background-color: red;
+  height:0px;
+}
+
+.logoutBtn span {
+    margin-right: 5px;
+}
+
