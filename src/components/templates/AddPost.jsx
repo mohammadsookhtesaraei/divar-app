@@ -1,9 +1,14 @@
 import { useState } from "react";
+import axios from "axios";
+
 
 import { useQuery } from "@tanstack/react-query";
 import { getCategory } from "../../services/admin";
 
+import { getCookie } from "../../utils/cookie";
+
 import styles from "./AddPost.module.css"
+import toast from "react-hot-toast";
 
 const AddPost = () => {
   const [form, setForm] = useState({
@@ -30,7 +35,19 @@ const AddPost = () => {
 
   const addHandler = (event) => {
     event.preventDefault();
-    console.log(form);
+    const formData=new FormData();
+    for(let i in form){
+      formData.append(i,form[i])
+    };
+    
+    const token=getCookie("accessToken");
+    axios.post(`${import.meta.env.VITE_BASE_URL}post/create`,formData,{
+      headers:{
+        "Content-type":"multipart/form-data",
+        Authorization:`beare ${token}`
+      }
+    }).then((res)=>toast.success(res.data.message))
+    .catch((error)=> toast.error("مشکلی پیش امده است"))
   };
 
   return (
@@ -41,7 +58,7 @@ const AddPost = () => {
       <label htmlFor="content">توضیحات</label>
       <textarea name="content" id="content"></textarea>
       <label htmlFor="amount">مبلغ</label>
-      <input type="text" name="amount" id="amount" />
+      <input type="number" name="amount" id="amount" />
       <label htmlFor="city">شهر</label>
       <input type="text" id="city" name="city" />
       <label htmlFor="category">دسته بندی</label>
@@ -55,6 +72,7 @@ const AddPost = () => {
       <label htmlFor="images">عکس</label>
       <input type="file" name="images" id="images" />
       <button onClick={addHandler}>ایجاد</button>
+    
     </form>
   );
 };

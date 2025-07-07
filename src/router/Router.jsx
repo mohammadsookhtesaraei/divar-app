@@ -11,8 +11,8 @@ import Loader from "../components/modules/Loader";
 import { getProfile } from "../services/user";
 
 const Router = () => {
-  const {data,isPending,error}=useQuery({queryKey:["profile"],queryFn:getProfile});
-  console.log({data,isPending,error});
+  const {data,isPending}=useQuery({queryKey:["profile"],queryFn:getProfile});
+ 
   if(isPending) return <Loader/>
   return (
     <Routes>
