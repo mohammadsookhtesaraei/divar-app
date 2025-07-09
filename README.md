@@ -1,8 +1,45 @@
-# React + Vite
+# Classified Ads Platform (Divar-style Clone)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project is a web application similar to **Divar**, built using **React**, allowing users to post ads and admins to manage them through a dedicated admin panel.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## ✨ Features
+
+- ✅ Users can submit new ads  
+- ✅ SMS-based login (phone number verification)  
+- ✅ Form validation for all inputs  
+- ✅ Admin Panel:
+  - Create and manage categories
+  - View and moderate user ads
+
+---
+
+## 🛠 Technologies & Libraries Used
+
+| Library / Tech            | Purpose |
+|---------------------------|---------|
+| **React.js**              | Building the user interface |
+| **React Query**           | Server state management & API caching |
+| **React Router DOM**      | Routing between pages |
+| **React Icons**           | UI icons |
+| **React Toastify**        | Toast notifications |
+| **MongoDB**               | NoSQL database to store ads, users, and categories |
+| **Node.js + Express**     | Backend API (assumed) |
+
+---
+
+## 🧩 Project Structure
+
+- **User Flow:**
+  - Sign in using phone number and verification code (SMS)
+  - Submit ads through a validated form
+
+- **Admin Panel:**
+  - Admin login
+  - Manage categories
+  - Review and moderate user-submitted ads
+
+---
+
+
